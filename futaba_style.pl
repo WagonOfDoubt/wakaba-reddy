@@ -115,6 +115,8 @@ use constant PAGE_TEMPLATE => compile_template(NORMAL_HEAD_INCLUDE.q{
 <loop $threads>
 	<loop $posts>
 		<if !$parent>
+			<!-- thread container begin -->
+			<div id="thread-<var $num>">
 			<if $image>
 				<span class="filesize"><const S_PICNAME><a target="_blank" href="<var expand_image_filename($image)>"><var get_filename($image)></a>
 				-(<em><var $size> B, <var $width>x<var $height></em>)</span>
@@ -203,6 +205,8 @@ use constant PAGE_TEMPLATE => compile_template(NORMAL_HEAD_INCLUDE.q{
 			</td></tr></tbody></table>
 		</if>
 	</loop>
+	</div>
+	<!-- thread container end -->
 	<br clear="left" /><hr />
 </loop>
 
